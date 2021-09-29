@@ -1,0 +1,19 @@
+{
+  "name": "webpack-demo",
+  "version": "1.0.0",
+  "description": "webpack示例",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-eg1": "webpack --config ./webpack.eg.loader.config.js"
+  },
+  "author": "PC",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^5.55.0",
+    "webpack-cli": "^4.8.0"
+  },
+  "dependencies": {
+    "loader-utils": "^2.0.0"
+  }
+}
