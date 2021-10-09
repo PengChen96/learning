@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-eg1": "webpack --config ./webpack.eg.loader.config.js"
+    "build-eg1": "webpack --config ./webpack.eg.loader.config.js",
+    "build-eg2": "webpack --config ./webpack.eg.plugin.config.js"
   },
   "author": "PC",
   "license": "MIT",

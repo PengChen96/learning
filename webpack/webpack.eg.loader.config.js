@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'production',
-  entry: './entry/eg.loader.entry.js',
+  entry: './entry/eg.entry.js',
   output: {
     filename: 'eg.loader.output.js',
     path: path.resolve(__dirname, './output'),
