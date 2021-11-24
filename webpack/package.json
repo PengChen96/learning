@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-eg1": "webpack --config ./webpack.eg.loader.config.js",
-    "build-eg2": "webpack --config ./webpack.eg.plugin.config.js"
+    "build-eg2": "webpack --config ./webpack.eg.plugin.config.js",
+    "build-esm": "webpack --config ./webpack.eg.esm.config.js"
   },
   "author": "PC",
   "license": "MIT",
