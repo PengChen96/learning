@@ -1,9 +1,9 @@
 var e = {
   d: (o, r) => {
-    for (var t in r) e.o(r, t) && !e.o(o, t) && Object.defineProperty(o, t, {enumerable: !0, get: r[t]})
+    for (var n in r) e.o(r, n) && !e.o(o, n) && Object.defineProperty(o, n, {enumerable: !0, get: r[n]})
   }, o: (e, o) => Object.prototype.hasOwnProperty.call(e, o)
 }, o = {};
-e.d(o, {Z: () => r});
-const r = (e, o) => (console.log("hi, sumFun!"), e + o);
-var t = o.Z;
-export {t as default};
+e.d(o, {v: () => r, d: () => n});
+const r = (e, o) => (console.log("hi, sumFun!"), e + o), n = (e, o) => e - o;
+var t = o.d, a = o.v;
+export {t as minsFun, a as sumFun};

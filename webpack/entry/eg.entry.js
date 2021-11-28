@@ -2,5 +2,10 @@ const sumFun = (a, b) => {
   console.log('hi, sumFun!');
   return a + b;
 };
-
-export default sumFun;
+const minsFun = (a, b) => {
+  return a - b;
+}
+export {
+  sumFun,
+  minsFun
+};
