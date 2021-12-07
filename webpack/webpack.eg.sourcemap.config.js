@@ -14,7 +14,7 @@ module.exports = [
 ];
 
 /**
- sourcemap
+ sourcemap 参考：https://www.cnblogs.com/Wayou/p/understanding_frontend_source_map.html
 
  “feel the force” ⇒ Yoda ⇒ “the force feel”
 
@@ -34,7 +34,7 @@ module.exports = [
  0|0|1|5|0, 4|0|1|9|1
  mappings：0|0|1|5|0, 4|0|1|4|1, 6|0|1|-9|1
 
- 5 VLQ 二进制
+ 5、VLQ 二进制
  1｜23｜456｜7  => 1｜10111｜111001000｜111
 
  1 = [C0]0001[S0]  // 第一位标示是否结束  最后一位标示正负数
@@ -45,4 +45,10 @@ module.exports = [
  二进制：000010 101110 000001 110000 011100 001110
  base64: CuBwcO     // 依据base64编码表： https://image.fundebug.com/20181012_base64-map.png
 
+ 6、略去不必要字段，省略其中某些字段后，一个编码片段就不一定是5位了，他的长度有可能为1，4或者5。
+ 5 - 包含全部五个部分：输出文件中的列号，输入文件索引，输入文件中的行号，输入文件中的列号，符号索引
+ 4 - 输出文件中的列号，输入文件索引，输入文件中的行号，输入文件中的列号
+ 1 - 输出文件中的列号
+
  */
+
