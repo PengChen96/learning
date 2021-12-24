@@ -15,14 +15,5 @@ module.exports = [
     experiments: {
       outputModule: true,
     },
-  },
-  {
-    mode: 'production',
-    entry: './entry/eg.entry.js',
-    output: {
-      filename: 'eg.basic.output.js',
-      path: path.resolve(__dirname, './output'),
-      libraryTarget: 'commonjs2'
-    },
   }
 ];

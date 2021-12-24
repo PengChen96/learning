@@ -13,6 +13,13 @@ export default () => {
     {title: '住址', dataIndex: 'address', key: 'address',},
   ];
   const onExportClick = () => {
+    // 测试webpack打包结果
+    // import('../webpack/entry/eg.entry').then(res => {
+    //   res.sumFun(1,2);
+    // });
+    // import('../webpack/entry/eg.basic.entry').then(res => {
+    //   res.test();
+    // })
     exportFile({
       columns,
       dataSource
