@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react'
 // import SubApp, {init, forceInit, render, destroy} from "./subApp/output/sub-app-umd";
 import {loadJS} from "./utils/sourceUtils"
-// import ReactDOM from "react-dom";
+import ReactDOM from "react-dom";
 
 export default () => {
   let subAppRef = useRef(null);

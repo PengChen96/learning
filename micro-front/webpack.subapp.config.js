@@ -1,5 +1,21 @@
 const path = require('path');
 
+const SpaPlugin = require('./plugin/spa.plugin');
+
+const externals = [{
+  react: {
+    root: 'React',
+    commonjs2: 'react',
+    commonjs: 'react',
+    amd: 'react',
+  },
+  "react-dom": {
+    root: "ReactDOM",
+    commonjs2: "react-dom",
+    commonjs: "react-dom",
+    amd: "react-dom",
+  },
+}];
 module.exports = [
   {
     mode: 'development',
@@ -19,6 +35,7 @@ module.exports = [
       path: path.resolve(__dirname, './subApp/output'),
       libraryTarget: 'commonjs2'
     },
+    externals
   },
   {
     mode: 'development',
@@ -34,24 +51,14 @@ module.exports = [
       ]
     },
     output: {
-      filename: 'sub-app-umd.js',
+      filename: 'sub-app-umd.[chunkhash:10].js',
       path: path.resolve(__dirname, './subApp/output'),
       libraryTarget: 'umd'
     },
-    externals: [{
-      react: {
-        root: 'React',
-        commonjs2: 'react',
-        commonjs: 'react',
-        amd: 'react',
-      },
-      "react-dom": {
-        root: "ReactDOM",
-        commonjs2: "react-dom",
-        commonjs: "react-dom",
-        amd: "react-dom",
-      },
-    }]
+    plugins: [new SpaPlugin({
+      fileName: 'manifest.js'
+    })],
+    externals
   }
 ];
 
