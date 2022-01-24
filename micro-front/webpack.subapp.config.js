@@ -39,7 +39,9 @@ module.exports = [
   },
   {
     mode: 'development',
-    entry: './subApp/index.js',
+    entry: {
+      subApp01: './subApp/index.js'
+    },
     devtool: false,
     module: {
       rules: [
@@ -56,7 +58,10 @@ module.exports = [
       libraryTarget: 'umd'
     },
     plugins: [new SpaPlugin({
-      fileName: 'manifest.js'
+      fileName: 'manifest.js',
+      entries: [
+        "subApp01"
+      ]
     })],
     externals
   }

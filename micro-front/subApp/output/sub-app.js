@@ -10,23 +10,60 @@
 
 module.exports = require("react");
 
-/***/ }),
+/***/
+    }),
 
-/***/ "react-dom":
-/*!*****************************************************************************************************!*\
-  !*** external {"root":"ReactDOM","commonjs2":"react-dom","commonjs":"react-dom","amd":"react-dom"} ***!
-  \*****************************************************************************************************/
-/***/ ((module) => {
+    /***/ "react-dom":
+    /*!*****************************************************************************************************!*\
+      !*** external {"root":"ReactDOM","commonjs2":"react-dom","commonjs":"react-dom","amd":"react-dom"} ***!
+      \*****************************************************************************************************/
+    /***/ ((module) => {
 
-module.exports = require("react-dom");
+      module.exports = require("react-dom");
 
-/***/ })
+      /***/
+    }),
 
-/******/ 	});
+    /***/ "./node_modules/@babel/runtime/helpers/esm/extends.js":
+    /*!************************************************************!*\
+      !*** ./node_modules/@babel/runtime/helpers/esm/extends.js ***!
+      \************************************************************/
+    /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export */
+      __webpack_require__.d(__webpack_exports__, {
+        /* harmony export */   "default": () => (/* binding */ _extends)
+        /* harmony export */
+      });
+
+      function _extends() {
+        _extends = Object.assign || function (target) {
+          for (var i = 1; i < arguments.length; i++) {
+            var source = arguments[i];
+
+            for (var key in source) {
+              if (Object.prototype.hasOwnProperty.call(source, key)) {
+                target[key] = source[key];
+              }
+            }
+          }
+
+          return target;
+        };
+
+        return _extends.apply(this, arguments);
+      }
+
+      /***/
+    })
+
+    /******/
+  });
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -40,14 +77,14 @@ module.exports = require("react-dom");
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -60,7 +97,7 @@ module.exports = require("react-dom");
 /******/ 			return getter;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -72,12 +109,12 @@ module.exports = require("react-dom");
 /******/ 			}
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -88,7 +125,7 @@ module.exports = require("react-dom");
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
@@ -96,29 +133,34 @@ var __webpack_exports__ = {};
 /*!*************************!*\
   !*** ./subApp/index.js ***!
   \*************************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "init": () => (/* binding */ init),
-/* harmony export */   "forceInit": () => (/* binding */ forceInit),
-/* harmony export */   "render": () => (/* binding */ render),
-/* harmony export */   "destroy": () => (/* binding */ destroy),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "react-dom");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+  __webpack_require__.r(__webpack_exports__);
+  /* harmony export */
+  __webpack_require__.d(__webpack_exports__, {
+    /* harmony export */   "init": () => (/* binding */ init),
+    /* harmony export */   "forceInit": () => (/* binding */ forceInit),
+    /* harmony export */   "render": () => (/* binding */ render),
+    /* harmony export */   "destroy": () => (/* binding */ destroy),
+    /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+    /* harmony export */
+  });
+  /* harmony import */
+  var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+  /* harmony import */
+  var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+  /* harmony import */
+  var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+  /* harmony import */
+  var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "react-dom");
+  /* harmony import */
+  var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
 
 
-
-
-var SubApp = function SubApp(props) {
-  console.log('sub-app');
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    console.log('useEffect', props);
-  }, [props.id, props.name]);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "sub-app ", props.name);
+  var SubApp = function SubApp(props) {
+    console.log('sub-app');
+    (0, react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+      console.log('useEffect', props);
+    }, [props.id, props.name]);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", null, "sub-app ", props.name);
 };
 
 var config = {};
@@ -137,13 +179,13 @@ var forceInit = function forceInit(params) {
 var render = function render(el, props) {
   console.log('render', el);
   if (typeof el === 'string') el = document.getElementById(el);
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default().render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(SubApp, _extends({}, config, props)), el);
+  react_dom__WEBPACK_IMPORTED_MODULE_2___default().render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(SubApp, (0, _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, config, props)), el);
 };
 
 var destroy = function destroy(el) {
   if (el) {
-    react_dom__WEBPACK_IMPORTED_MODULE_1___default().unmountComponentAtNode(el);
-    react_dom__WEBPACK_IMPORTED_MODULE_1___default().render(null, el);
+    react_dom__WEBPACK_IMPORTED_MODULE_2___default().unmountComponentAtNode(el);
+    react_dom__WEBPACK_IMPORTED_MODULE_2___default().render(null, el);
   }
 };
 

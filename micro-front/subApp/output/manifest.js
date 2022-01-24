@@ -1,0 +1,1 @@
+!function(_,e){"object"==typeof exports&&"object"==typeof module?module.exports=e():(_.__SPA__=_.__SPA__||{},_.__SPA__.manifest=e())}(self,function(){return{subApp01:{js:["sub-app-umd.53f791c31f.js"],css:[]}}});
