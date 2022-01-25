@@ -1,9 +1,13 @@
 const uglifyJs = require('uglify-js');
+const webpackSources = require('webpack-sources');
+
+const SPA = '__SPA__';
 
 class SpaPlugin {
   static defaultOptions = {
     fileName: 'manifest.js',
-    entries: 'all'
+    entries: 'all',
+    enableFakeCommonJS: true,
   }
 
   constructor(options = {}) {
@@ -23,6 +27,10 @@ class SpaPlugin {
         return ${code};
       });
     `;
+  }
+
+  genWithExprFakeCommonJsStart() {
+    return `with (typeof ${SPA} === 'object' ? ${SPA}.fakeWindow : {}) {\n\n`;
   }
 
   apply(compiler) {
@@ -49,6 +57,38 @@ class SpaPlugin {
         size: () => code.length
       };
 
+    })
+    compiler.hooks.compilation.tap(pluginName, compilation => {
+      // 注入commonJS
+      if (this.options.enableFakeCommonJS) {
+        this.injectFakeCommonJS(compilation, compiler);
+      }
+
+    })
+  }
+
+  injectFakeCommonJS(compilation, compiler) {
+    const pluginName = SpaPlugin.name;
+    const {webpack} = compiler;
+    const {Compilation} = webpack;
+    compilation.hooks.processAssets.tapAsync({
+      name: pluginName,
+      stage: Compilation.PROCESS_ASSETS_STAGE_ADDITIONS,
+    }, (assets, callback) => {
+      Object.entries(assets).forEach(([pathname, source]) => {
+        const assetInfo = compilation.assetsInfo.get(pathname);
+        if (/\.js$/.test(pathname)) {
+          compilation.assets[pathname] = new webpackSources.ConcatSource(
+            // with 语句头部
+            new webpackSources.OriginalSource(this.genWithExprFakeCommonJsStart(), `${pluginName}/fakeCommonJSWithExpressionStart`),
+            // 原始代码新增2格缩进
+            new webpackSources.PrefixSource('  ', source),
+            // with 语句底部
+            new webpackSources.OriginalSource('\n\n}\n', `${pluginName}/fakeCommonJSWithExpressionEnd`)
+          );
+        }
+      });
+      callback();
     })
   }
 

@@ -40,7 +40,7 @@ module.exports = [
   {
     mode: 'development',
     entry: {
-      subApp01: './subApp/index.js'
+      subApp01: './subApp/index.js',
     },
     devtool: false,
     module: {

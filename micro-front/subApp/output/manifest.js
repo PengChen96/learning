@@ -1,1 +1,1 @@
-!function(_,e){"object"==typeof exports&&"object"==typeof module?module.exports=e():(_.__SPA__=_.__SPA__||{},_.__SPA__.manifest=e())}(self,function(){return{subApp01:{js:["sub-app-umd.53f791c31f.js"],css:[]}}});
+!function(e,_){"object"==typeof exports&&"object"==typeof module?module.exports=_():(e.__SPA__=e.__SPA__||{},e.__SPA__.manifest=_())}(self,function(){return{subApp01:{js:["sub-app-umd.f31c27acae.js"],css:[]}}});

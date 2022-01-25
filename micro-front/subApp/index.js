@@ -2,9 +2,9 @@ import React, {useEffect} from 'react';
 import ReactDOM from 'react-dom';
 
 const SubApp = (props) => {
-  console.log('sub-app');
+  console.log('渲染<SubApp>组件');
   useEffect(() => {
-    console.log('useEffect', props);
+    console.log('useEffect props', props);
   }, [props.id, props.name]);
   return <div>
     sub-app {props.name}
@@ -15,14 +15,14 @@ const config = {};
 const init = (params) => {
   config.id = params.id || 'sub-app';
   config.name = params.name || 'sub-app 子应用';
-  console.log('init:', config);
+  console.log('执行init方法:', config);
 }
 const forceInit = (params) => {
   Object.assign(config, params);
-  console.log('forceInit:', config);
+  console.log('执行forceInit方法:', config);
 }
 const render = (el, props) => {
-  console.log('render', el);
+  console.log('执行render方法:', el);
   if (typeof el === 'string') el = document.getElementById(el);
   ReactDOM.render(<SubApp {...config} {...props}/>, el);
 }

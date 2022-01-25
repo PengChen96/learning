@@ -2,15 +2,15 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "react":
-/*!**************************************************************************************!*\
-  !*** external {"root":"React","commonjs2":"react","commonjs":"react","amd":"react"} ***!
-  \**************************************************************************************/
-/***/ ((module) => {
+    /***/ "react":
+    /*!**************************************************************************************!*\
+      !*** external {"root":"React","commonjs2":"react","commonjs":"react","amd":"react"} ***!
+      \**************************************************************************************/
+    /***/ ((module) => {
 
-module.exports = require("react");
+      module.exports = require("react");
 
-/***/
+      /***/
     }),
 
     /***/ "react-dom":
@@ -60,124 +60,163 @@ module.exports = require("react");
 
     /******/
   });
-/************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/
-/************************************************************************/
-var __webpack_exports__ = {};
+  /************************************************************************/
+  /******/ 	// The module cache
+  /******/
+  var __webpack_module_cache__ = {};
+  /******/
+  /******/ 	// The require function
+  /******/
+  function __webpack_require__(moduleId) {
+    /******/ 		// Check if module is in cache
+    /******/
+    var cachedModule = __webpack_module_cache__[moduleId];
+    /******/
+    if (cachedModule !== undefined) {
+      /******/
+      return cachedModule.exports;
+      /******/
+    }
+    /******/ 		// Create a new module (and put it into the cache)
+    /******/
+    var module = __webpack_module_cache__[moduleId] = {
+      /******/ 			// no module.id needed
+      /******/ 			// no module.loaded needed
+      /******/      exports: {}
+      /******/
+    };
+    /******/
+    /******/ 		// Execute the module function
+    /******/
+    __webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+    /******/
+    /******/ 		// Return the exports of the module
+    /******/
+    return module.exports;
+    /******/
+  }
+
+  /******/
+  /************************************************************************/
+  /******/ 	/* webpack/runtime/compat get default export */
+  /******/
+  (() => {
+    /******/ 		// getDefaultExport function for compatibility with non-harmony modules
+    /******/
+    __webpack_require__.n = (module) => {
+      /******/
+      var getter = module && module.__esModule ?
+        /******/        () => (module['default']) :
+        /******/        () => (module);
+      /******/
+      __webpack_require__.d(getter, {a: getter});
+      /******/
+      return getter;
+      /******/
+    };
+    /******/
+  })();
+  /******/
+  /******/ 	/* webpack/runtime/define property getters */
+  /******/
+  (() => {
+    /******/ 		// define getter functions for harmony exports
+    /******/
+    __webpack_require__.d = (exports, definition) => {
+      /******/
+      for (var key in definition) {
+        /******/
+        if (__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+          /******/
+          Object.defineProperty(exports, key, {enumerable: true, get: definition[key]});
+          /******/
+        }
+        /******/
+      }
+      /******/
+    };
+    /******/
+  })();
+  /******/
+  /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+  /******/
+  (() => {
+    /******/
+    __webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+    /******/
+  })();
+  /******/
+  /******/ 	/* webpack/runtime/make namespace object */
+  /******/
+  (() => {
+    /******/ 		// define __esModule on exports
+    /******/
+    __webpack_require__.r = (exports) => {
+      /******/
+      if (typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+        /******/
+        Object.defineProperty(exports, Symbol.toStringTag, {value: 'Module'});
+        /******/
+      }
+      /******/
+      Object.defineProperty(exports, '__esModule', {value: true});
+      /******/
+    };
+    /******/
+  })();
+  /******/
+  /************************************************************************/
+  var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-(() => {
-/*!*************************!*\
-  !*** ./subApp/index.js ***!
-  \*************************/
-  __webpack_require__.r(__webpack_exports__);
-  /* harmony export */
-  __webpack_require__.d(__webpack_exports__, {
-    /* harmony export */   "init": () => (/* binding */ init),
-    /* harmony export */   "forceInit": () => (/* binding */ forceInit),
-    /* harmony export */   "render": () => (/* binding */ render),
-    /* harmony export */   "destroy": () => (/* binding */ destroy),
-    /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+  (() => {
+    /*!*************************!*\
+      !*** ./subApp/index.js ***!
+      \*************************/
+    __webpack_require__.r(__webpack_exports__);
     /* harmony export */
-  });
-  /* harmony import */
-  var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-  /* harmony import */
-  var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-  /* harmony import */
-  var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-  /* harmony import */
-  var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "react-dom");
-  /* harmony import */
-  var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
+    __webpack_require__.d(__webpack_exports__, {
+      /* harmony export */   "init": () => (/* binding */ init),
+      /* harmony export */   "forceInit": () => (/* binding */ forceInit),
+      /* harmony export */   "render": () => (/* binding */ render),
+      /* harmony export */   "destroy": () => (/* binding */ destroy),
+      /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+      /* harmony export */
+    });
+    /* harmony import */
+    var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+    /* harmony import */
+    var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+    /* harmony import */
+    var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+    /* harmony import */
+    var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "react-dom");
+    /* harmony import */
+    var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
 
 
-  var SubApp = function SubApp(props) {
-    console.log('sub-app');
-    (0, react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-      console.log('useEffect', props);
-    }, [props.id, props.name]);
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", null, "sub-app ", props.name);
-};
+    var SubApp = function SubApp(props) {
+      console.log('渲染<SubApp>组件');
+      (0, react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+        console.log('useEffect props', props);
+      }, [props.id, props.name]);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", null, "sub-app ", props.name);
+    };
 
 var config = {};
 
 var init = function init(params) {
   config.id = params.id || 'sub-app';
   config.name = params.name || 'sub-app 子应用';
-  console.log('init:', config);
+  console.log('执行init方法:', config);
 };
 
 var forceInit = function forceInit(params) {
   Object.assign(config, params);
-  console.log('forceInit:', config);
+  console.log('执行forceInit方法:', config);
 };
 
 var render = function render(el, props) {
-  console.log('render', el);
+  console.log('执行render方法:', el);
   if (typeof el === 'string') el = document.getElementById(el);
   react_dom__WEBPACK_IMPORTED_MODULE_2___default().render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(SubApp, (0, _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, config, props)), el);
 };
