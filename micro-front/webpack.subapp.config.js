@@ -1,6 +1,7 @@
 const path = require('path');
 
 const SpaPlugin = require('./plugin/spa.plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const externals = [{
   react: {
@@ -28,6 +29,10 @@ module.exports = [
           use: 'babel-loader',
           exclude: /node_modules/
         },
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader']
+        },
       ]
     },
     output: {
@@ -50,6 +55,10 @@ module.exports = [
           use: 'babel-loader',
           exclude: /node_modules/
         },
+        {
+          test: /\.css$/,
+          use: [MiniCssExtractPlugin.loader, 'css-loader']
+        },
       ]
     },
     output: {
@@ -57,12 +66,17 @@ module.exports = [
       path: path.resolve(__dirname, './subApp/output'),
       libraryTarget: 'umd'
     },
-    plugins: [new SpaPlugin({
-      fileName: 'manifest.js',
-      entries: [
-        "subApp01"
-      ]
-    })],
+    plugins: [
+      new SpaPlugin({
+        fileName: 'manifest.js',
+        entries: [
+          "subApp01"
+        ]
+      }),
+      new MiniCssExtractPlugin({
+        filename: 'sub-app-umd.[chunkhash:10].css'
+      })
+    ],
     externals
   }
 ];

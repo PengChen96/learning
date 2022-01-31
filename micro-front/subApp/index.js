@@ -1,13 +1,16 @@
 import React, {useEffect} from 'react';
 import ReactDOM from 'react-dom';
+import SubAppChild from "./SubAppChild";
+import "./index.css";
 
 const SubApp = (props) => {
   console.log('渲染<SubApp>组件');
   useEffect(() => {
     console.log('useEffect props', props);
   }, [props.id, props.name]);
-  return <div>
+  return <div className="sub-app-container">
     sub-app {props.name}
+    <SubAppChild/>
   </div>
 }
 

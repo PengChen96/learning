@@ -1,4 +1,4 @@
-import {loadJS} from "../utils/sourceUtils"
+import {loadCSS, loadJS} from "../utils/sourceUtils"
 import React from 'react';
 import ReactDOM from "react-dom";
 
@@ -39,7 +39,10 @@ export const createApp = (hosts, options) => {
     async require(id) {
       let modules = appConfig(id);
       await loadJS(manifestUrl);
-      let {js} = window.__SPA__.manifest[id];
+      let {js, css} = window.__SPA__.manifest[id];
+      css.forEach((file) => {
+        loadCSS(`${hosts}/${file}`);
+      })
       const loadJsPromise = js.map((file) => {
         return loadJS(`${hosts}/${file}`);
       })

@@ -28,6 +28,34 @@ function loadJS(url) {
     });
 }
 
+function loadCSS(url) {
+    return new Promise(function (resolve, reject) {
+        var link = document.createElement('link');
+        link.href = url;
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+
+        link.onload = function () {
+            return resolve(link);
+        };
+
+        var handleError = function handleError(err) {
+            headNode.removeChild(link);
+            reject(err);
+        };
+
+        link.onerror = handleError;
+        link.onabort = handleError;
+
+        if (!headNode) {
+            headNode = document.getElementsByTagName('head')[0];
+        }
+
+        headNode.appendChild(link);
+    });
+}
+
 export {
-    loadJS
+    loadJS,
+    loadCSS
 }
