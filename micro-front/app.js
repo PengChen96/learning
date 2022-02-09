@@ -3,31 +3,39 @@ import React, {useEffect, useRef} from 'react'
 import {createApp} from "./subApp/umdIndex";
 
 const subAppModule = createApp('http://127.0.0.1:8000/subApp/output');
+const subApp02Module = createApp('http://127.0.0.1:8000/subApp02/output');
 export default () => {
   let subAppRef = useRef(null);
-  // let subAppRef02 = useRef(null);
+  let subApp02Ref = useRef(null);
 
-  useEffect(() => {
-    load_init();
-    return () => destroy(subAppRef.current);
+  useEffect(async () => {
+    await initSubApp01();
+    await initSubApp02();
+    return () => {
+      destroy(subAppRef.current);
+      destroy(subApp02Ref.current);
+    }
   }, []);
 
-  const load_init = async () => {
+  const initSubApp01 = async () => {
     let module = await subAppModule.require('subApp01');
     module.init({id: 'sub-app 01', name: '子应用 01'});
     if (subAppRef.current) {
       module.render(subAppRef.current);
     }
-    // module.init({id: 'sub-app 02', name: '子应用 02'});
-    // if (subAppRef02.current) {
-    //   module.render(subAppRef02.current);
-    // }
+  }
+  const initSubApp02 = async () => {
+    let module = await subApp02Module.require('subApp02');
+    module.init({id: 'sub-app 02', name: '子应用 02'});
+    if (subApp02Ref.current) {
+      module.render(subApp02Ref.current);
+    }
   }
 
   return <div>
     {/*组件：<SubApp/>*/}
     函数：
     <div ref={subAppRef} id="sub-app"/>
-    {/*<div ref={subAppRef02} id="sub-app-02"/>*/}
+    <div ref={subApp02Ref} id="sub-app-02"/>
   </div>
 }
