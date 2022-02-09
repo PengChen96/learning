@@ -78,6 +78,43 @@ module.exports = [
       })
     ],
     externals
+  },
+  {
+    mode: 'development',
+    entry: {
+      subApp02: './subApp02/index.js',
+    },
+    devtool: false,
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          use: 'babel-loader',
+          exclude: /node_modules/
+        },
+        {
+          test: /\.css$/,
+          use: [MiniCssExtractPlugin.loader, 'css-loader']
+        },
+      ]
+    },
+    output: {
+      filename: 'sub-app-umd.[chunkhash:10].js',
+      path: path.resolve(__dirname, './subApp02/output'),
+      libraryTarget: 'umd'
+    },
+    plugins: [
+      new SpaPlugin({
+        fileName: 'manifest.js',
+        entries: [
+          "subApp02"
+        ]
+      }),
+      new MiniCssExtractPlugin({
+        filename: 'sub-app-umd.[chunkhash:10].css'
+      })
+    ],
+    externals
   }
 ];
 

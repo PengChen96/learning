@@ -20,8 +20,7 @@ class SpaPlugin {
         if (typeof exports === 'object' && typeof module === 'object') {
           module.exports = factory();
         } else {
-          root.__SPA__ = root.__SPA__ || {};
-          root.__SPA__.manifest = factory();
+          root.__SPA__.defineManifest(factory());
         }
       })(self, function () {
         return ${code};
