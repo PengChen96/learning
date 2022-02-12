@@ -1,5 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './app';
+// window.subAppMFUrl = 'http://localhost:3002';
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+import "./bootstrap"

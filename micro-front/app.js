@@ -1,9 +1,10 @@
-import React, {useEffect, useRef} from 'react'
+import React, {Suspense, useEffect, useRef} from 'react'
 // import SubApp, {init, forceInit, render, destroy} from "./subApp/output/sub-app-umd";
 import {createApp} from "./subApp/umdIndex";
 
 const subAppModule = createApp('http://127.0.0.1:8000/subApp/output');
 const subApp02Module = createApp('http://127.0.0.1:8000/subApp02/output');
+const RemoteApp = React.lazy(() => import("subAppMF/App"));
 export default () => {
   let subAppRef = useRef(null);
   let subApp02Ref = useRef(null);
@@ -37,5 +38,8 @@ export default () => {
     函数：
     <div ref={subAppRef} id="sub-app"/>
     <div ref={subApp02Ref} id="sub-app-02"/>
+    <Suspense fallback={"loading..."}>
+      <RemoteApp/>
+    </Suspense>
   </div>
 }
