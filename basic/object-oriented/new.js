@@ -6,16 +6,13 @@
  * 4. 执行构造函数后，如果返回值是对象类型，则将结果返回，否则返回创建的对象
  */
 
-function newFunc(...args) {
-  const constructor = [...args].shift();
+function newFunc(context, ...args) {
   // const obj = {};
   // obj.__proto__ = constructor.prototype;
-  const obj = Object.create(constructor.prototype);
-  const ret = constructor.call(obj, ...args);
+  const obj = Object.create(context.prototype);
+  const ret = context.call(obj, ...args);
   return typeof ret === 'object' ? ret : obj;
 }
-
-
 // e.g
 function Person(name) {
   this.name = name
