@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import ReactDOM from 'react-dom';
+import {Button} from 'antd';
 // import SubAppChild from "./SubAppChild";
 import "./index.css";
 
@@ -11,6 +12,10 @@ const SubApp = (props) => {
   return <div className="sub-app-container">
     sub-app {props.name}
     {/*<SubAppChild/>*/}
+    <Button onClick={() => {
+      window.bbb = 'app02';
+      console.log(window.bbb, window);
+    }}>app02 设置window</Button>
   </div>
 }
 

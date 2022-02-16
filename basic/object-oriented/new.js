@@ -13,6 +13,14 @@ function newFunc(context, ...args) {
   const ret = context.call(obj, ...args);
   return typeof ret === 'object' ? ret : obj;
 }
+
+// Object.create 实现
+Object.prototype.create = function (daProto) {
+  const obj = {};
+  obj.__proto__ = daProto;
+  return obj;
+}
+
 // e.g
 function Person(name) {
   this.name = name

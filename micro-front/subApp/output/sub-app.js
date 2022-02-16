@@ -831,6 +831,7 @@
       /* harmony export */   "forceInit": () => (/* binding */ forceInit),
       /* harmony export */   "render": () => (/* binding */ render),
       /* harmony export */   "destroy": () => (/* binding */ destroy),
+      /* harmony export */   "flag": () => (/* binding */ flag),
       /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
       /* harmony export */
     });
@@ -857,7 +858,12 @@
       }, [props.id, props.name]);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
         className: "sub-app-container"
-      }, "sub-app ", props.name, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_SubAppChild__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+      }, "sub-app ", props.name, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("button", {
+        onClick: function onClick() {
+          window.aaa = 'app01';
+          console.log(window.aaa, window);
+        }
+      }, "app01 \u8BBE\u7F6Ewindow"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_SubAppChild__WEBPACK_IMPORTED_MODULE_3__["default"], null));
     };
 
 var config = {};
@@ -886,6 +892,7 @@ var destroy = function destroy(el) {
   }
 };
 
+    var flag = 'subApp01';
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SubApp);
 })();

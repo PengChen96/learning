@@ -5,13 +5,18 @@ class SandBox {
     this.microModules = externals || {};
     this.microWindow = new Proxy(this.microModules, {
       get(target, propKey, receiver) {
+        // console.log('get', target, propKey);
         if (Reflect.has(target, propKey)) {
           return Reflect.get(target, propKey);
+        }
+        if (target[appId] && Reflect.has(target[appId], propKey)) {
+          return Reflect.get(target[appId], propKey);
         }
         // 否则兜底到window对象上取值
         return Reflect.get(window, propKey);
       },
       set(target, propKey, value) {
+        console.log('set', target, propKey, value);
         target[appId] = target[appId] || {};
         Reflect.set(target[appId], propKey, value);
         return true;

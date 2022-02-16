@@ -19,6 +19,7 @@ export const createApp = (hosts, options) => {
       await loadModuleAssets(appId, hosts);
       console.table(window.__SPA__);
       console.log(appId, '加载模块暴露的方法', microModules[appId]);
+      // window.__SPA__[appId] = microModules[appId];
       return microModules[appId];
     }
   }

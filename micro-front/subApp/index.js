@@ -10,6 +10,11 @@ const SubApp = (props) => {
   }, [props.id, props.name]);
   return <div className="sub-app-container">
     sub-app {props.name}
+    <button onClick={() => {
+      window.aaa = 'app01';
+      console.log(window.aaa, window);
+    }}>app01 设置window
+    </button>
     <SubAppChild/>
   </div>
 }
@@ -35,10 +40,12 @@ const destroy = (el) => {
     ReactDOM.render(null, el);
   }
 }
+const flag = 'subApp01';
 export {
   init,
   forceInit,
   render,
-  destroy
+  destroy,
+  flag
 }
 export default SubApp;
