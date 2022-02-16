@@ -38,6 +38,11 @@ export default () => {
     函数：
     <div ref={subAppRef} id="sub-app"/>
     <div ref={subApp02Ref} id="sub-app-02"/>
+    <button onClick={() => {
+      window.AAA = 'main app';
+      console.log(window.AAA, window);
+    }}>主应用 设置window
+    </button>
     <Suspense fallback={"loading..."}>
       <RemoteApp/>
     </Suspense>
