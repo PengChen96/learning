@@ -32,8 +32,8 @@ module.exports = {
       name: "app",
       remotes: {
         // subAppMF: "subAppMF@[subAppMFUrl]/remoteEntry.js",
-        subAppMF: "subAppMF@http://localhost:3002/remoteEntry.js",
-        // subAppMF: "subAppMF@http://127.0.0.1:8000/subAppMF/output/remoteEntry.js",
+        // subAppMF: "subAppMF@http://localhost:3002/remoteEntry.js",
+        subAppMF: "subAppMF@http://127.0.0.1:8000/subAppMF/output/remoteEntry.js",
       },
       // shared: { react: { singleton: true, eager: true }, 'react-dom': { singleton: true, eager: true } },
     }),
