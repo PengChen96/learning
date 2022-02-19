@@ -50,12 +50,9 @@ const defineManifest = (manifestAssets) => {
 const getManifestAssets = (appId) => {
   return window.__SPA__.manifest[appId];
 }
-const loadModuleAssets = (appId, hosts) => new Promise(async (resolve, reject) => {
+const loadModuleJsAssets = (appId, hosts) => new Promise(async (resolve, reject) => {
   try {
-    let {js, css} = getManifestAssets(appId);
-    css.forEach((file) => {
-      loadCSS(`${hosts}/${file}`);
-    })
+    let {js} = getManifestAssets(appId);
     const loadJsPromise = js.map((file) => {
       return loadJS(`${hosts}/${file}`);
     })
@@ -65,8 +62,21 @@ const loadModuleAssets = (appId, hosts) => new Promise(async (resolve, reject) =
     reject(e);
   }
 })
+const loadModuleCssAssets = (appId, hosts, loadFlag = true) => {
+  let cssAssets = [];
+  let {css} = getManifestAssets(appId);
+  css.forEach((file) => {
+    const url = `${hosts}/${file}`;
+    cssAssets.push(url);
+    if (loadFlag) {
+      loadCSS(url);
+    }
+  })
+  return cssAssets;
+}
 
 export {
   appConfig,
-  loadModuleAssets
+  loadModuleJsAssets,
+  loadModuleCssAssets,
 }

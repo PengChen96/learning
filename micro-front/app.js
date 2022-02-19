@@ -1,9 +1,10 @@
 import React, {Suspense, useEffect, useRef} from 'react'
 // import SubApp, {init, forceInit, render, destroy} from "./subApp/output/sub-app-umd";
 import {createApp} from "./subApp/umdIndex";
+import {createApp as createShadowApp} from "./subApp02/umdIndex";
 
 const subAppModule = createApp('http://127.0.0.1:8000/subApp/output');
-const subApp02Module = createApp('http://127.0.0.1:8000/subApp02/output');
+const subApp02Module = createShadowApp('http://127.0.0.1:8000/subApp02/output');
 const RemoteApp = React.lazy(() => import("subAppMF/App"));
 export default () => {
   let subAppRef = useRef(null);
@@ -29,7 +30,7 @@ export default () => {
     let module = await subApp02Module.require('subApp02');
     module.init({id: 'sub-app 02', name: '子应用 02'});
     if (subApp02Ref.current) {
-      module.render(subApp02Ref.current);
+      module.render(subApp02Ref.current, {shadowCssAssets: module.cssAssets});
     }
   }
 

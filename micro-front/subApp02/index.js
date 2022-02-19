@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import {Button} from 'antd';
 // import SubAppChild from "./SubAppChild";
-import "./index.css";
+import "./index.css?scoped=true";
 
 const SubApp = (props) => {
   console.log('渲染<SubApp>组件');
@@ -32,7 +32,16 @@ const forceInit = (params) => {
 const render = (el, props) => {
   console.log('执行render方法:', el);
   if (typeof el === 'string') el = document.getElementById(el);
-  ReactDOM.render(<SubApp {...config} {...props}/>, el);
+  let shadow = el.attachShadow({mode: 'open'});
+  (props.shadowCssAssets || []).forEach((cssAsset) => {
+    const linkElem = document.createElement('link');
+    linkElem.setAttribute('rel', 'stylesheet');
+    linkElem.setAttribute('href', cssAsset);
+    shadow.appendChild(linkElem);
+  })
+  const wrapper = document.createElement('span');
+  shadow.appendChild(wrapper);
+  ReactDOM.render(<SubApp {...config} {...props}/>, wrapper);
 }
 const destroy = (el) => {
   if (el) {

@@ -95,6 +95,8 @@ module.exports = [
         {
           test: /\.css$/,
           use: [MiniCssExtractPlugin.loader, 'css-loader']
+          // 通过loader postcss去添加css来实现样式隔离的方案
+          // use: [MiniCssExtractPlugin.loader, 'css-loader', path.resolve(__dirname, './loader/spa.loader.js')]
         },
       ]
     },
@@ -114,7 +116,19 @@ module.exports = [
         filename: 'sub-app-umd.[chunkhash:10].css'
       })
     ],
-    externals
+    externals,
+    optimization: {
+      splitChunks: {
+        // chunks(chunk) {
+        //   return !/d$/.test(chunk.name);
+        // },
+        chunks: 'all',
+        // name: false,
+        // automaticNameDelimiter: '-',
+        // minSize: 100 * 1024,
+        maxSize: 100 * 1024,
+      }
+    }
   }
 ];
 

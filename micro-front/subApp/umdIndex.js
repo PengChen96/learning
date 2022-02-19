@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from "react-dom";
 import {loadJS} from "../utils/sourceUtils"
-import {appConfig, loadModuleAssets} from "../utils/spaUtils";
+import {appConfig, loadModuleCssAssets, loadModuleJsAssets} from "../utils/spaUtils";
 
 export const createApp = (hosts, options) => {
 
@@ -16,7 +16,8 @@ export const createApp = (hosts, options) => {
     async require(appId) {
       let {microModules} = appConfig(appId, externals);
       await loadJS(manifestUrl);
-      await loadModuleAssets(appId, hosts);
+      loadModuleCssAssets(appId, hosts);
+      await loadModuleJsAssets(appId, hosts);
       console.table(window.__SPA__);
       console.log(appId, '加载模块暴露的方法', microModules[appId]);
       // window.__SPA__[appId] = microModules[appId];
